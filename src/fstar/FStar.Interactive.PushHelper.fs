@@ -381,4 +381,5 @@ let full_lax text st =
   | Inl (st, deps) ->
       let names = add_module_completions st.repl_fname deps st.repl_names in
       repl_tx ({ st with repl_names = names }) LaxCheck (PushFragment frag)
-  | Inr st -> None, st
+  | Inr st ->
+      repl_tx st LaxCheck (PushFragment frag)

@@ -887,4 +887,6 @@ let (full_lax :
                   (uu___2.FStar_Interactive_JsonHelper.repl_stdin);
                 FStar_Interactive_JsonHelper.repl_names = names
               }) LaxCheck (FStar_Interactive_JsonHelper.PushFragment frag)
-       | FStar_Util.Inr st1 -> (FStar_Pervasives_Native.None, st1))
+       | FStar_Util.Inr st1 ->
+           repl_tx st1 LaxCheck
+             (FStar_Interactive_JsonHelper.PushFragment frag))
